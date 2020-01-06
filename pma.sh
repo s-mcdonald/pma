@@ -18,12 +18,10 @@ if [ ! -f $CMD ]; then
     CMD=/vagrant/scripts/serve.sh
 else
     # Create an SSL certificate
-    sudo bash $CMD_CERT pma.test
-    sudo bash $CMD_CERT pma.dev
+    sudo bash $CMD_CERT pma.local
 fi
 
-sudo bash $CMD pma.test $(pwd)/phpmyadmin 80 443 7.3
-sudo bash $CMD pma.dev $(pwd)/phpmyadmin 80 443 7.3
+sudo bash $CMD pma.local $(pwd)/phpmyadmin 80 443 7.3
 
 echo "Installing dependencies for phpMyAdmin"
 cd phpmyadmin && composer update --no-dev
