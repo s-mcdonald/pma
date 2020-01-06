@@ -26,4 +26,5 @@ sudo bash $CMD pma.local $(pwd)/phpmyadmin 80 443 7.3
 echo "Installing dependencies for phpMyAdmin"
 cd phpmyadmin && composer update --no-dev
 
-sudo service nginx reload
+#sudo service nginx reload
+sudo service apache2 restart
